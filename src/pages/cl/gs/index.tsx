@@ -38,11 +38,11 @@ import Root from 'pages/Root'
 import EsWorker from './worker'
 
 const redGroup = css`
-  background-color: #ffc0c0;
+  background-color: ${props => props.theme.isDarkMode ? '#933' : '#ffc0c0'};
 `
 
 const blueGroup = css`
-  background-color: #c0e0ff;
+  background-color: ${props => props.theme.isDarkMode ? '#039' : '#c0e0ff'};
 `
 
 interface WorkerRequest {

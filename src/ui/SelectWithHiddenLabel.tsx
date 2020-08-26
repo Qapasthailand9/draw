@@ -19,6 +19,8 @@ const HiddenLabel = styled.label`
 `
 
 const Select = styled.select`
+  background-color: ${props => props.theme.isDarkMode ? '#246' : 'white'};
+  color: ${props => props.theme.isDarkMode ? 'white' : ''};
   cursor: pointer;
 `
 
