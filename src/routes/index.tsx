@@ -17,6 +17,7 @@ import usePopup from 'store/usePopup'
 import useDrawId from 'store/useDrawId'
 import useXRay from 'store/useXRay'
 import useFastDraw from 'store/useFastDraw'
+import useTheme from 'store/useTheme'
 
 import Visibility from 'ui/Visibility'
 
@@ -67,6 +68,7 @@ const Routing = () => {
   const [popup] = usePopup()
   const [isXRay, setIsXRay] = useXRay()
   const [isFastDraw, setIsFastDraw] = useFastDraw()
+  const [theme, setTheme] = useTheme()
 
   const o = useSeasonTournamentStage()
 
@@ -106,9 +108,11 @@ const Routing = () => {
           tournament={tournament!}
           stage={stage!}
           isXRay={isXRay}
+          theme={theme}
           isFastDraw={isFastDraw}
           enableFastDraw={enableFastDraw}
           onSetIsXRay={setIsXRay}
+          onSetTheme={setTheme}
           onSeasonChange={onSeasonChange}
         />
       </Visibility>
