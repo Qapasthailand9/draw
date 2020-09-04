@@ -1,5 +1,6 @@
 import React, {
   useState,
+  useEffect,
   useRef,
   useCallback,
   memo,
@@ -32,7 +33,18 @@ const GroupCellDeferred = ({
   const [displayedTeam, setDisplayedTeam] = useState(team)
   const to = useRef<HTMLElement | null>(null)
 
+  useEffect(() => {
+    console.log('changed to', team)
+    if (!team) {
+      setDisplayedTeam(undefined)
+    }
+  }, [team])
+
   const fill = useCallback(() => {
+    console.log('filling', team)
+    if (!team) {
+      return
+    }
     setDisplayedTeam(team)
   }, [team])
 

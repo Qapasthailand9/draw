@@ -40,7 +40,6 @@ interface Props {
   tournament: Tournament,
   stage: Stage,
   season: number,
-  drawId: string,
   onSeasonChange: (tournament: Tournament, stage: Stage, season?: number) => void,
 }
 
@@ -53,7 +52,6 @@ interface State {
 }
 
 const Pages = ({
-  drawId,
   tournament,
   stage,
   season,
@@ -128,7 +126,6 @@ const Pages = ({
 
   return pots && Page && (
     <Page
-      key={drawId}
       tournament={params.tournament}
       stage={params.stage}
       season={season}
